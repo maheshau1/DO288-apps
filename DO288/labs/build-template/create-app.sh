@@ -1,11 +1,10 @@
 #!/bin/sh
 
-source /usr/local/etc/ocp4.config
 
-oc new-app --template ${RHT_OCP4_DEV_USER}-common/php-mysql-ephemeral \
+oc new-app --template test-common/php-mysql-ephemeral \
   -p NAME=quotesapi \
-  -p APPLICATION_DOMAIN=quote-${RHT_OCP4_DEV_USER}.${RHT_OCP4_WILDCARD_DOMAIN} \
-  -p SOURCE_REPOSITORY_URL=https://github.com/${RHT_OCP4_GITHUB_USER}/DO288-apps \
+  -p APPLICATION_DOMAIN=quote-test-build-template.itzroks-662002o51b-g95mp5-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud\
+  -p SOURCE_REPOSITORY_URL=https://github.com/maheshau1/DO288-apps \
   -p CONTEXT_DIR=quotes \
   -p DATABASE_SERVICE_NAME=quotesdb \
   -p DATABASE_USER=user1 \
